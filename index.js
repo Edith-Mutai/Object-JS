@@ -16,20 +16,21 @@
 
 
 function User(name, stepsWalked) {
-    this.name = name;
+  this.name = name;
     this.stepsWalked = stepsWalked;
-
-    this.totalSteps = function () {
+  
+  this.totalSteps = function () {
+    
         return this.stepsWalked.reduce((total, steps) => total + steps, 0);
     };
 
-    this.averageSteps = function () {
+  this.averageSteps = function () {
         const total = this.totalSteps();
-        return total / this.stepsWalked.length;
+      return total / this.stepsWalked.length;
     };
 }
 
-const user = new User("John Doe", [30, 52, 75, 88, 96]);
+const user = new User("Lyndy", [30, 52, 75, 88, 96]);
 console.log("Total Steps:", user.totalSteps());
 console.log("Average Steps:", user.averageSteps());
 
@@ -55,12 +56,12 @@ console.log("Average Steps:", user.averageSteps());
 
 function Recipe(name, ingredients, cookTime) {
     this.name = name;
-    this.ingredients = ingredients;
+   this.ingredients = ingredients;
     this.cookTime = cookTime;
 
     this.displayRecipe = function () {
         console.log(`Recipe: ${this.name}`);
-        console.log("Ingredients:");
+       console.log("Ingredients:");
         this.ingredients.forEach((ingredient) => console.log(`* ${ingredient}`));
     };
 
@@ -68,6 +69,7 @@ function Recipe(name, ingredients, cookTime) {
         return this.cookTime <= 30;
     };
 }
+
 
 const recipe = new Recipe("Boiled Rice", ["Rice", "Salt", "Boiled Water"], 40);
 recipe.displayRecipe();
@@ -96,19 +98,19 @@ console.log("Is Quick Meal:", recipe.isQuickMeal());
 function Car(model, mileage, serviceHistory) {
     this.model = model;
     this.mileage = mileage;
-    this.serviceHistory = serviceHistory;
+  this.serviceHistory = serviceHistory;
 
     this.addService = function (date) {
         this.serviceHistory.push(date);
     };
 
     this.lastServiceDate = function () {
-        return this.serviceHistory[this.serviceHistory.length - 1];
+    return this.serviceHistory[this.serviceHistory.length - 1];
     };
 }
 
 const car = new Car("Cardillac Escalade", 15000, ["2025-03-22", "2025-06-20"]);
-car.addService("2023-10-01");
+ car.addService("2023-10-01");
 console.log("Last Service Date:", car.lastServiceDate());
 
 // 4) Create a Playlist object with a property songs (an array of song titles). 
@@ -153,10 +155,6 @@ function Playlist() {
 
 const playlist = new Playlist();
 playlist.addSong("Song 1");
-playlist.addSong("Song 2");
-playlist.addSong("Song 3");
-playlist.listSongs();
-playlist.removeSong("Song 2");
 playlist.listSongs();
 
 
@@ -177,19 +175,20 @@ playlist.listSongs();
         // 5. Use length to get the number of completed lessons and total lessons.
         // 6. Create an instance of the course and input the parameters
 
-        function Course(title, lessons, completedLessons) {
-            this.title = title;
-            this.title = lessons;
+   function Course(title, lessons, completedLessons) {
+        this.title = title;
+          this.title = lessons;
             this.completedLessons = completedLessons;
             this.markComplete = function(lesson) {
-                this.completedLessons.push(lesson);
+              this.completedLessons.push(lesson);
             }
             this.getProgress = function() {
-                return `${this.completedLessons.length} out of ${this.lessons.length} lessons completed`;
+              return `${this.completedLessons.length} out of ${this.lessons.length} lessons completed`;
             }
         }
 
-        const course = new Course ("JavaScript Basics", ["Lesson 1", "Lesson 2", "Lesson 3"], []);
+        co
+          nst course = new Course ("JavaScript Course", ["Lesson 1", "Lesson 2", "Lesson 3"], []);
         course.markComplete("Lesson 1");
         console.log(course.getProgress());
 
